@@ -66,10 +66,11 @@ install:
 - wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz
 - tar -zxvf gsl-2.7.1.tar.gz
 - cd gsl-2.7.1
-- sudo ./configure
-- sudo make
-- sudo make check
-- sudo make install
+- mkdir ${DEPS_DIR}/gsl
+- ./configure --prefix=${DEPS_DIR}/gsl
+- make
+- make check
+- make install
   
 
 before_script:
