@@ -59,7 +59,7 @@ install:
 - tar -zxvf gsl-2.7.1.tar.gz
 - mkdir -p gsl
 - cd gsl-2.7.1
-- ./configure --prefix=gsl && make && make check && sudo make install
+- ./configure --prefix=${TRAVIS_BUILD_DIR}/gsl && make && make check && sudo make install
 
 before_script:
 - mkdir -p build && cd build
