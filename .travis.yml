@@ -55,15 +55,17 @@ addons:
     - cmake
 
 install:
+- mkdir -p $HOME/.cache && cd $HOME/.cache
 - wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz 
 - tar -zxvf gsl-2.7.1.tar.gz
 - mkdir -p gsl
 - cd gsl-2.7.1
-- ./configure --prefix=${TRAVIS_BUILD_DIR}/gsl && make && make check && sudo make install
+- ./configure --prefix=$HOME/.cache/gsl && make && make check && sudo make install
 
 before_script:
+- cd ${TRAVIS_BUILD_DIR}
 - mkdir -p build && cd build
-- cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=${BUILD_TYPE} 
+- cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
 
 script:
 - cmake --build . --config ${BUILD_TYPE} -- -j $(nproc)
