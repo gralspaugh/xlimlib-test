@@ -1,0 +1,3 @@
+// the configured options and settings for XlimlibTest
+#define XlimlibTest_VERSION_MAJOR @XlimlibTest_VERSION_MAJOR@
+#define XlimlibTest_VERSION_MINOR @XlimlibTest_VERSION_MINOR@
