@@ -74,7 +74,6 @@ install:
   
 
 before_script:
-- set -eou pipefail
 - mkdir -p build && cd build
 - cmake -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=${BUILD_TYPE} 
 
