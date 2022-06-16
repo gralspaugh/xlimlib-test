@@ -54,22 +54,12 @@ addons:
     - lcov
     - cmake
 
-before_install:
-- DEPS_DIR="$HOME/.cache"
-- mkdir -p ${DEPS_DIR} && cd ${DEPS_DIR}
+install:
 - wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.7.1.tar.gz 
 - tar -zxvf gsl-2.7.1.tar.gz
 - cd gsl-2.7.1
-- mkdir ${DEPS_DIR}/gsl
-- ./configure --prefix=${DEPS_DIR}/gsl
-- make
-- make check
-
-
-install:
-- cd $HOME/.cache/gsl
-- make install
-  
+- mkdir gsl
+- ./configure --prefix=gsl && make && make check && sudo make install
 
 before_script:
 - mkdir -p build && cd build
