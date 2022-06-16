@@ -67,9 +67,9 @@ install:
 - tar -zxvf gsl-2.7.1.tar.gz
 - cd gsl-2.7.1
 - sudo ./configure
-- make
-- make check
-- make install
+- sudo make
+- sudo make check
+- sudo make install
   
 
 before_script:
