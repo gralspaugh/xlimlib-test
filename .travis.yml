@@ -62,12 +62,12 @@ before_install:
 - cd gsl-2.7.1
 - mkdir ${DEPS_DIR}/gsl
 - ./configure --prefix=${DEPS_DIR}/gsl
+- make
+- make check
 
 
 install:
 - cd $HOME/.cache/gsl
-- make
-- make check
 - make install
   
 
